@@ -26,13 +26,15 @@ function values() {
 }
 
 function answer(percent) {
+    input3.style.outline = "none"
     inputValue1 = input1.value
     inputValue3 = input3.value
     resetBtn.style.backgroundColor = "hsl(172, 67%, 45%)"
-        result1 = percent * inputValue1 
-        amount2.textContent = "$" + parseFloat(result1).toFixed(2)
-        result2 = result1 / inputValue3
-        amount1.textContent = "$" + parseFloat(result2).toFixed(2)
+    result1 = percent * inputValue1 
+    result2 = result1 / inputValue3
+    amount1.textContent = "$" + result2.toFixed(2)
+    amountValue1 = result2.toFixed(2)
+    amount2.textContent = "$" + (inputValue1 / inputValue3 + parseFloat(amountValue1)).toFixed(2)
 }
 
 function validation(inputvalues){
@@ -59,6 +61,7 @@ function getValue2() {
     }
     else if(input3.value == ""){
         error.textContent = "Can't be zero"
+        input3.style.outline = "2px solid rgb(239, 102, 102)"
         input2.value = ""
     }else{
         input2.style.fontWeight = 700
@@ -69,6 +72,7 @@ function getValue2() {
 
 function getValue3() {
     error.textContent = ""
+    input3.style.outline = "none"
     validation(input3)
 }
 
@@ -78,6 +82,7 @@ btn1.addEventListener("click", function() {
     }
     else if(input3.value == ""){
         error.textContent = "Can't be zero"
+        input3.style.outline = "2px solid rgb(239, 102, 102)"
     }
     
     else{
@@ -92,6 +97,7 @@ btn2.addEventListener("click", function() {
     }
     else if(input3.value == ""){
         error.textContent = "Can't be zero"
+        input3.style.outline = "2px solid rgb(239, 102, 102)"
     }else{
         values()
         answer(percentage[1])
@@ -104,6 +110,7 @@ btn3.addEventListener("click", function() {
     }
     else if(input3.value == ""){
         error.textContent = "Can't be zero"
+        input3.style.outline = "2px solid rgb(239, 102, 102)"
     }else{
         values()
         answer(percentage[2])
@@ -116,6 +123,7 @@ btn4.addEventListener("click", function() {
     }
     else if(input3.value == ""){
         error.textContent = "Can't be zero"
+        input3.style.outline = "2px solid rgb(239, 102, 102)"
     }else{
         values()
         answer(percentage[3])
@@ -128,6 +136,7 @@ btn5.addEventListener("click", function() {
     }
     else if(input3.value == ""){
         error.textContent = "Can't be zero"
+        input3.style.outline = "2px solid rgb(239, 102, 102)"
     }else{
         values()
         answer(percentage[4])
@@ -143,5 +152,6 @@ resetBtn.addEventListener("click", function() {
     input1.style.fontWeight = 300
     input2.style.fontWeight = 300
     input3.style.fontWeight = 300
+    nput3.style.outline = "none"
     resetBtn.style.backgroundColor = "hsl(186, 14%, 43%)"
 })
