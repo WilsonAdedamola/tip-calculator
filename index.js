@@ -152,6 +152,6 @@ resetBtn.addEventListener("click", function() {
     input1.style.fontWeight = 300
     input2.style.fontWeight = 300
     input3.style.fontWeight = 300
-    nput3.style.outline = "none"
+    input3.style.outline = "none"
     resetBtn.style.backgroundColor = "hsl(186, 14%, 43%)"
 })
